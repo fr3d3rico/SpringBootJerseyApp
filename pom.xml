@@ -19,7 +19,20 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <!-- exclude tomcat for add undertow.io servlet -->
+            <exclusions>
+		        <exclusion>
+	                <groupId>org.springframework.boot</groupId>
+	                <artifactId>spring-boot-starter-tomcat</artifactId>
+		        </exclusion>
+			</exclusions>
         </dependency>
+        
+        <!-- Undertow.io servlet container instead tomcat default -->
+        <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-undertow</artifactId>
+		</dependency>
         
         <!-- Jersey -->
         <dependency>
